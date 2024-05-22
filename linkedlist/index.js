@@ -42,10 +42,27 @@ class LinkedList {
     this.head = newNode;
     this.length++;
   }
+
+  printList(){
+    const array = [];
+    let currentNode = this.head;
+    while(currentNode !== null){
+      array.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+  }
+
+  insert(value, index) {
+    if (this.length > index) {
+      
+    } else {
+      return null;
+    }
+  }
 }
 
 const myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(6);
 myLinkedList.prepend(1);
-console.log(myLinkedList);
+myLinkedList.printList();
