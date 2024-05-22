@@ -43,13 +43,14 @@ class LinkedList {
     this.length++;
   }
 
-  printList(){
+  printList() {
     const array = [];
     let currentNode = this.head;
     while(currentNode !== null){
-      array.push(currentNode.value);
-      currentNode = currentNode.next;
+        array.push(currentNode.value)
+        currentNode = currentNode.next
     }
+    console.log(array);
   }
 
   insert(value, index) {
