@@ -55,7 +55,7 @@ class LinkedList {
   }
 
   insert(value, index) {
-    if (this.length <= index) {
+    if (this.length <= index || this.length === 0) {
       console.log('YES')
       return this.append(value)
     }
@@ -68,7 +68,15 @@ class LinkedList {
     return this.printList();
   }
   remove(index){
-    // challenge, remove an element at a specific index
+    if (this.length <= index) {
+      return null;
+    }
+    let prevNode = this.traverseToIndex(index - 1);
+    let delNode = prevNode.next;
+    let nxtNode = delNode.next;
+    prevNode.next = nxtNode;
+    this.length--;
+    return this.printList();
   }
   traverseToIndex(index) {
     //Check parameters
@@ -87,3 +95,4 @@ myLinkedList.append(5);
 myLinkedList.append(6);
 myLinkedList.prepend(1);
 myLinkedList.insert(99, 3);
+myLinkedList.remove(1);
