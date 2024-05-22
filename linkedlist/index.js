@@ -11,8 +11,8 @@
 //   }
 // }
 
-class Node{
-  constructor(value){
+class Node {
+  constructor(value) {
     this.value = value;
     this.next = null;
   }
@@ -33,44 +33,47 @@ class LinkedList {
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
-    return this;
+    return this.printList();
   }
 
-  prepend(value){
+  prepend(value) {
     const newNode = new Node(value);
     newNode.next = this.head;
     this.head = newNode;
     this.length++;
+    return this.printList();
   }
 
   printList() {
     const array = [];
     let currentNode = this.head;
-    while(currentNode !== null){
-        array.push(currentNode.value)
-        currentNode = currentNode.next
+    while (currentNode !== null) {
+      array.push(currentNode.value)
+      currentNode = currentNode.next
     }
     console.log(array);
   }
 
   insert(value, index) {
-    if (this.length > index) {
-      this.append(value)
-    } else {
-      let newNode = new Node(value)
-      let leader = this.traversList(index - 1);
-      let targetNode = leader.next;
-      leader.next = newNode;
-      newNode.next = targetNode;
-      return this;
+    if (this.length <= index) {
+      console.log('YES')
+      return this.append(value)
     }
+    let newNode = new Node(value)
+    let leader = this.traverseToIndex(index - 1);
+    let targetNode = leader.next;
+    leader.next = newNode;
+    newNode.next = targetNode;
+    this.length++;
+    return this.printList();
   }
-  traversList(index){
-    let count = 0;
+  traverseToIndex(index) {
+    //Check parameters
+    let counter = 0;
     let currentNode = this.head;
-    while(count >= index){
+    while (counter !== index) {
       currentNode = currentNode.next;
-      count++;
+      counter++;
     }
     return currentNode;
   }
@@ -80,5 +83,4 @@ const myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(6);
 myLinkedList.prepend(1);
-myLinkedList.insert(2,99)
-myLinkedList.printList();
+myLinkedList.insert(99, 3);
