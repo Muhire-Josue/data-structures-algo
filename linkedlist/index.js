@@ -68,7 +68,8 @@ class LinkedList {
     return this.printList();
   }
   remove(index){
-    if (this.length <= index) {
+    if (this.length < index) {
+      console.log('INDEX OUT OF ORDER')
       return null;
     }
     if(index === 0) {
@@ -78,7 +79,15 @@ class LinkedList {
       this.length--;
       return this.printList();
     }
-    let prevNode = this.traverseToIndex(index - 1);
+    if(index === this.length) {
+      let prevNode = this.traverseToIndex(index - 2);
+      prevNode.next = null;
+      this.tail = prevNode;
+      this.length--;
+      // console.log('===>>', prevNode)
+      return this.printList();
+    }
+    let prevNode = this.traverseToIndex(index - 2);
     let targetNode = prevNode.next;
     let nxtNode = targetNode.next;
     prevNode.next = nxtNode;
@@ -102,4 +111,4 @@ myLinkedList.append(5);
 myLinkedList.append(6);
 myLinkedList.prepend(1);
 myLinkedList.insert(99, 3);
-myLinkedList.remove(0);
+myLinkedList.remove(2);
