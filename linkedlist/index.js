@@ -71,9 +71,16 @@ class LinkedList {
     if (this.length <= index) {
       return null;
     }
+    if(index === 0) {
+      let targetNode = this.head;
+      let nxtNode = targetNode.next;
+      this.head = nxtNode;
+      this.length--;
+      return this.printList();
+    }
     let prevNode = this.traverseToIndex(index - 1);
-    let delNode = prevNode.next;
-    let nxtNode = delNode.next;
+    let targetNode = prevNode.next;
+    let nxtNode = targetNode.next;
     prevNode.next = nxtNode;
     this.length--;
     return this.printList();
@@ -95,4 +102,4 @@ myLinkedList.append(5);
 myLinkedList.append(6);
 myLinkedList.prepend(1);
 myLinkedList.insert(99, 3);
-myLinkedList.remove(1);
+myLinkedList.remove(0);
