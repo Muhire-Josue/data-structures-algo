@@ -67,6 +67,9 @@ class LinkedList {
     this.length++;
     return this.printList();
   }
+  remove(index){
+    // challenge, remove an element at a specific index
+  }
   traverseToIndex(index) {
     //Check parameters
     let counter = 0;
