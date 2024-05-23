@@ -26,12 +26,21 @@ class DoublyLinkedList {
         this.length++;
         return this;
     }
+
+    prepend(value){
+        const newNode = new DoublyNode(value);
+        this.head.prev = newNode;
+        newNode.next = this.head;
+        this.head = newNode;
+        this.length++;
+        return this;
+    }
 }
 
 const myLinkedList = new DoublyLinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(6);
-console.log(myLinkedList);
-// myLinkedList.prepend(1);
+myLinkedList.prepend(1);
 // myLinkedList.insert(99, 3);
 // myLinkedList.remove(4);
+console.log(myLinkedList);
