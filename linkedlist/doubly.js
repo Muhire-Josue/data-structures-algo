@@ -57,6 +57,14 @@ class DoublyLinkedList {
         return this.printList();
 
     }
+    remove(index) {
+        let leader = this.traverseToIndex(index - 1);
+        let targetNode = leader.next;
+        let follower = targetNode.next;
+        leader.next = follower;
+        follower.prev = leader;
+        return this.printList();
+    }
     traverseToIndex(index) {
         //Check parameters
         let counter = 0;
@@ -74,5 +82,5 @@ myLinkedList.append(5);
 myLinkedList.append(6);
 myLinkedList.prepend(1);
 myLinkedList.insert(99, 2);
-// myLinkedList.remove(4);
+myLinkedList.remove(2);
 // console.log(myLinkedList);
