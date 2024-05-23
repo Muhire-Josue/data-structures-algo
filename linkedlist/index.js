@@ -11,14 +11,14 @@
 //   }
 // }
 
-class Node {
+class SinglyNode {
   constructor(value) {
     this.value = value;
     this.next = null;
   }
 }
 
-class LinkedList {
+class SinglyLinkedList {
   constructor(value) {
     this.head = {
       value: value,
@@ -28,7 +28,7 @@ class LinkedList {
     this.length = 1;
   }
   append(value) {
-    const newNode = new Node(value)
+    const newNode = new SinglyNode(value)
     // let currentNode = this.head;
     this.tail.next = newNode;
     this.tail = newNode;
@@ -37,7 +37,7 @@ class LinkedList {
   }
 
   prepend(value) {
-    const newNode = new Node(value);
+    const newNode = new SinglyNode(value);
     newNode.next = this.head;
     this.head = newNode;
     this.length++;
@@ -59,7 +59,7 @@ class LinkedList {
       console.log('YES')
       return this.append(value)
     }
-    let newNode = new Node(value)
+    let newNode = new SinglyNode(value)
     let leader = this.traverseToIndex(index - 1);
     let targetNode = leader.next;
     leader.next = newNode;
@@ -106,9 +106,9 @@ class LinkedList {
   }
 }
 
-const myLinkedList = new LinkedList(10);
+const myLinkedList = new SinglyLinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(6);
 myLinkedList.prepend(1);
 myLinkedList.insert(99, 3);
-myLinkedList.remove(2);
+myLinkedList.remove(4);
