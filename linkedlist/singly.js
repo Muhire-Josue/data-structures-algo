@@ -1,16 +1,3 @@
-// let myLinkedList = {
-//   head: {
-//     value: 10,
-//     next: {
-//       value: 5,
-//       next: {
-//         value: 16,
-//         next: null
-//       }
-//     }
-//   }
-// }
-
 class SinglyNode {
   constructor(value) {
     this.value = value;
