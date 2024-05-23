@@ -80,14 +80,14 @@ class LinkedList {
       return this.printList();
     }
     if(index === this.length) {
-      let prevNode = this.traverseToIndex(index - 2);
+      let prevNode = this.traverseToIndex(index - 1);
       prevNode.next = null;
       this.tail = prevNode;
       this.length--;
       // console.log('===>>', prevNode)
       return this.printList();
     }
-    let prevNode = this.traverseToIndex(index - 2);
+    let prevNode = this.traverseToIndex(index - 1);
     let targetNode = prevNode.next;
     let nxtNode = targetNode.next;
     prevNode.next = nxtNode;
