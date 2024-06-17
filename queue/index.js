@@ -32,7 +32,6 @@ class Stack {
         if (this.length === 0) {
             return null;
         } else {
-            const temp = this.top;
             this.top = this.top.next;
             this.length--;
             return this;
