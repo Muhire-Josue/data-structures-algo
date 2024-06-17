@@ -13,7 +13,7 @@ class Stack {
     }
 
     peek() {
-
+        return this.top;
     }
     push(value) {
         const newNode = new Node(value);
