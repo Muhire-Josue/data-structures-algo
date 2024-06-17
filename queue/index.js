@@ -29,11 +29,21 @@ class Stack {
         return this;
     }
     pop() {
-
+        if (this.length === 0) {
+            return null;
+        } else {
+            const temp = this.top;
+            this.top = this.top.next;
+            this.length--;
+            return this;
+        }
     }
 }
 
 const myStack = new Stack();
 myStack.push(1);
 myStack.push(2);
+myStack.push(3);
+console.log(myStack);
+myStack.pop();
 console.log(myStack);
