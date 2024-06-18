@@ -13,11 +13,20 @@ class Queue {
     }
 
     peek() {
-
+        return this.head;
     }
 
-    enqueue() {
-
+    enqueue(value) {
+        const newNode = new Node(value);
+        if(this.length === 0){
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+        this.length++
+        return this;
     }
 
     dequeue() {
