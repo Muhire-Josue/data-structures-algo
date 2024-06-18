@@ -18,7 +18,7 @@ class Queue {
 
     enqueue(value) {
         const newNode = new Node(value);
-        if(this.length === 0){
+        if (this.length === 0) {
             this.head = newNode;
             this.tail = newNode;
         } else {
@@ -30,7 +30,14 @@ class Queue {
     }
 
     dequeue() {
-
+        const newNode = new Node();
+        if (this.head === this.tail) {
+            this.tail = null;
+        } else {
+            this.head = this.head.next;
+            this.length--;
+            return this;
+        }
     }
 }
 
