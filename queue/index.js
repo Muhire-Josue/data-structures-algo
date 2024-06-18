@@ -33,3 +33,9 @@ class Queue {
 
     }
 }
+
+const myQueue = new Queue();
+myQueue.enqueue(1);
+myQueue.enqueue(2);
+myQueue.enqueue(3);
+console.log(myQueue);
