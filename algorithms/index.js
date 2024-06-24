@@ -19,5 +19,13 @@ function findFactorialIterative(number) {
     return answer;
 }
 
+function fibanocciIterative(n) {
+
+}
+
+function fibanocciRecursive(n) {
+    
+}
+
 // console.log(findFactorialIterative(5));
 console.log(findFactorialRecursive(5));
