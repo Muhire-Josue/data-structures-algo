@@ -20,7 +20,11 @@ function findFactorialIterative(number) {
 }
 
 function fibanocciIterative(n) {
-
+    let arr = [0, 1];
+    for (let i = 2; i < n+1; i++){
+        arr.push(arr[i-2] + arr[i-1]);
+    }
+    return arr[n];
 }
 
 function fibanocciRecursive(n) {
@@ -33,4 +37,5 @@ function fibanocciRecursive(n) {
 
 // console.log(findFactorialIterative(5));
 // console.log(findFactorialRecursive(5));
-console.log(fibanocciRecursive(6));
+// console.log(fibanocciRecursive(6));
+console.log(fibanocciIterative(6));
