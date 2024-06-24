@@ -32,4 +32,5 @@ function fibanocciRecursive(n) {
 }
 
 // console.log(findFactorialIterative(5));
-console.log(findFactorialRecursive(5));
+// console.log(findFactorialRecursive(5));
+console.log(fibanocciRecursive(6));
