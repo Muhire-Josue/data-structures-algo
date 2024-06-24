@@ -24,7 +24,11 @@ function fibanocciIterative(n) {
 }
 
 function fibanocciRecursive(n) {
-    
+    if(n < 2) {
+        return n;
+    }
+
+    return fibanocciRecursive(n-1) + fibanocciRecursive(n-2);
 }
 
 // console.log(findFactorialIterative(5));
